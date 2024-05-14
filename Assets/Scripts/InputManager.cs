@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
     #endregion
 
     #region Variables
-    PlayerInputMap playerInputMap;
+    PlayerInputMap playerInputMap; //InputMap for player input
 
     private Vector2 currentInputVector, newInputVector = new Vector2(0, 0);
 
@@ -31,6 +31,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+        //Enables playerInputMap so it can be used in game
         playerInputMap = new PlayerInputMap();
         playerInputMap.Player.Enable();
     }
@@ -41,6 +42,7 @@ public class InputManager : MonoBehaviour
         newInputVector = playerInputMap.Player.Move.ReadValue<Vector2>();
         newInputVector.Normalize();
 
+        //Calls event if the input vector has changed then updates the currentInputVector
         if(newInputVector != currentInputVector)
         {
             OnPlayerMovementInputVectorChange?.Invoke(this, new OnPlayerMovementInputVectorChangeEventArgs {  inputVectorNormalized = newInputVector });

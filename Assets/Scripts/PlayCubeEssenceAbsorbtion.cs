@@ -14,12 +14,12 @@ public class PlayCubeEssenceAbsorbtion : MonoBehaviour
 
     #region Variables
 
-    [Header("Player Attributes")]
+    [Header("Object Attributes")]
     [SerializeField] private float cubeEssenceAbsorptionSpeed;
     [SerializeField] private float currentCubeEssence;
     [SerializeField] private float essenceAbsorptionRadius;
 
-    [Header("Game Objects")]
+    [Header("External Game Objects")]
     [SerializeField] private Transform cuber;
     [SerializeField] private Transform spire;
 
