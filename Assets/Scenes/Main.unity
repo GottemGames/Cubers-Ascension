@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 332409990}
   - component: {fileID: 332409989}
   - component: {fileID: 332409988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Luminous Glade Spire Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,6 +987,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f829548d7768348b24b6cdaf355193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeEssenceAbsorptionSpeed: 1
+  currentCubeEssence: 0
+  essenceAbsorptionRadius: 5
+  cuber: {fileID: 0}
+  spire: {fileID: 1781350938}
+  spireMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1607239262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781350938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Luminous Glade Spire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
