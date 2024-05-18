@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UpgradeButtonUI : MonoBehaviour
 {
     #region Variables
-    [SerializeField] private Button upgradeButton;
+    [SerializeField] private TextMeshProUGUI upgradeButton;
     [SerializeField] private PlayCubeEssenceAbsorbtion cuber;
 
     private float upgradeButtonCost;
@@ -23,6 +24,11 @@ public class UpgradeButtonUI : MonoBehaviour
         upgradeIndex = 1;
     }
 
+    private void Start()
+    {
+        upgradeButton.text = "Upgrade <br>" + upgradeButtonStartingCost;
+    }
+
     public void TryUpgrade()
     {
          float essence = cuber.CurrentCubeEssence;
@@ -36,8 +42,7 @@ public class UpgradeButtonUI : MonoBehaviour
 
         upgradeButtonCost += upgradeButtonCost * upgradeIndex;
 
-        Debug.Log("upgrade Cost: " + upgradeButtonCost);
-
+        upgradeButton.text = "Upgrade <br>" + upgradeButtonCost;
     }
     #endregion
 }
