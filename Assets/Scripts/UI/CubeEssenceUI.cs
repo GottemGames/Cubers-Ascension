@@ -24,7 +24,8 @@ public class CubeEssenceUI : MonoBehaviour
 
     private void Cuber_OnCubeEssenceUpdate(object sender, PlayCubeEssenceAbsorbtion.OnCubeEssenceUpdateEventArgs e)
     {
-        cubeEssenceUI.text = ("Cube Essence: " + e.essence);
+        string essence = e.essence.ToString("F0");
+        cubeEssenceUI.text = ("Cube Essence: " + essence);
     }
 
 
