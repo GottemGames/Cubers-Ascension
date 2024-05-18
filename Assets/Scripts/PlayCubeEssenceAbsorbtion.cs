@@ -6,9 +6,17 @@ using UnityEngine.UIElements;
 
 public class PlayCubeEssenceAbsorbtion : MonoBehaviour
 {
+    #region Classes
+
+    public class OnCubeEssenceUpdateEventArgs : EventArgs
+    {
+        public float essence;
+    }
+
+    #endregion
 
     #region Events
-    public event EventHandler OnCubeEssenceUpdate;
+    public event EventHandler<OnCubeEssenceUpdateEventArgs> OnCubeEssenceUpdate;
 
     #endregion
 
@@ -30,7 +38,17 @@ public class PlayCubeEssenceAbsorbtion : MonoBehaviour
 
     #endregion
 
-    #region Functions
+    #region Properties
+
+    public float CurrentCubeEssence
+    {
+        get { return currentCubeEssence; }
+        set { currentCubeEssence = value;  }
+    }
+
+    #endregion
+
+    #region Methods
 
     private void Awake()
     {
@@ -47,7 +65,7 @@ public class PlayCubeEssenceAbsorbtion : MonoBehaviour
         {
             currentCubeEssence += cubeEssenceAbsorptionSpeed * Time.deltaTime;
 
-            OnCubeEssenceUpdate?.Invoke(this, EventArgs.Empty);
+            OnCubeEssenceUpdate?.Invoke(this, new OnCubeEssenceUpdateEventArgs { essence = currentCubeEssence});
         }
     }
     #endregion
